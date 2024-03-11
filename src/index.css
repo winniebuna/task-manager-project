@@ -1,13 +1,300 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 22px;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #444141;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid #232222;
+  margin: auto;
+  background-color: #232222;
+}
+
+header {
+  width: 100%;
+  padding: 1.5rem;
+  color: #d9d9d9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+header h1 {
+  font-weight: 500;
+}
+
+header p {
+  font-size: 0.8rem;
+  color: #696866;
+}
+
+main {
+  color: #d9d9d9;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: auto;
+}
+
+footer {
+  width: 100%;
+  padding: 0.25em;
+  color: #d9d9d9;
+  display: grid;
+  place-content: center;
+}
+
+.progress-bar {
+  background-color: #332a36;
+  width: 90%;
+  padding: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  margin: 0.25rem 0;
+  border-radius: 15px;
+}
+
+.task-list-label {
+  color: #696866;
+  align-self: flex-start;
+  margin: 2rem 1rem 0;
+  font-size: 0.8rem;
+}
+
+ul {
+  width: 100%;
+  list-style: none;
+  padding: 1rem;
+}
+
+ul li::before {
+  content: "\200B";
+}
+
+.task {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #191919;
+  padding: 1rem;
+  margin: 0.25rem 0;
+  border-radius: 15px;
+}
+
+.task:first-child {
+  margin: 0;
+}
+
+.task input[type="checkbox"] {
+  text-align: center;
+  width: 2.5rem;
+  width: 48px;
+  min-width: 48px;
+  height: 2.5rem;
+  height: 48px;
+  min-height: 48px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.task > label {
+  font-size: 0.8rem;
+  flex-grow: 1;
+}
+
+.task svg {
+  min-width: 25px;
+  height: 25px;
+  font-size: 1rem;
+  color: #d9d9d9;
+  cursor: pointer;
+}
+
+.task svg:focus,
+.task svg:hover {
+  color: red;
+  outline: none;
+}
+
+/* ----------- */
+.container {
+  display: block;
+  position: relative;
+  padding-top: 2%;
+  padding-left: 45px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 25px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  /* background-color: #eee; */
+  border: 1px solid #d478ff;
+  border-radius: 15px;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #332a36;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #d478ff;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #191919;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* --------------------------------------- */
+
+.search-form {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.25rem 0 0;
+  padding: 0 0.5rem 0.25rem;
+}
+
+.search-form label {
+  position: absolute;
+  left: -99999px;
+}
+
+.search-form input[type="text"] {
+  flex-grow: 1;
+  max-width: 100%;
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 1rem;
+  margin: 0 0.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+  background-color: #191919;
+  color: #696866;
+}
+
+.add-form {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.2rem 1.5rem;
+  padding: 0 1rem 0.25rem;
+}
+
+.add-form label {
+  position: absolute;
+  left: -99999px;
+}
+
+.add-form input[type="text"] {
+  flex-grow: 1;
+  max-width: calc(100% - 50px);
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-right: 0.5rem;
+  outline: none;
+  border: none;
+  background-color: #191919;
+  color: #696866;
+}
+
+button {
+  min-width: 48px;
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  font-size: 1rem;
+  background-color: #d478ff;
+  color: #191919;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+button:focus,
+button:hover {
+  color: white;
+  background-color: #332a36;
+  outline: none;
+  border: none;
+}
+
+/* scroll bar customization */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #232222;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #696866;
+  border-radius: 10px;
 }

@@ -33,12 +33,12 @@ function App() {
   };
 
   const handleDelete = (id) => {
-    const updatedTasks = tasks.filter((task) => task.id !== id);
+    const updatedTasks = tasks?.filter((task) => task?.id !== id);
     setAndSaveTasks(updatedTasks);
   };
 
   const calculateProgress = () => {
-    const completedCount = tasks.filter((task) => task.completed).length;
+    const completedCount = tasks?.filter((task) => task?.completed).length;
     const totalCount = tasks.length;
     return Math.round(
       totalCount === 0 ? 0 : (completedCount / totalCount) * 100
@@ -55,8 +55,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>App here</h1>
-      {/* <Header />
+      <Header />
       <SearchTask search={search} setSearch={setSearch} />
       <AddTask
         newTask={newTask}
@@ -64,15 +63,15 @@ function App() {
         handleSubmit={handleSubmit}
       />
       <Content
-        tasks={tasks.filter((task) =>
-          task.task.toLowerCase().includes(search.toLowerCase())
+        tasks={tasks?.filter((task) =>
+          task?.task.toLowerCase().includes(search.toLowerCase())
         )}
         handleToggleComplete={handleToggleComplete}
         handleDelete={handleDelete}
         calculateProgress={calculateProgress}
         progress={progress}
       />
-      <Footer length={tasks.length} /> */}
+      <Footer length={tasks.length} />
     </div>
   );
 }

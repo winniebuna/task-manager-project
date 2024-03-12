@@ -55,7 +55,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <h1>App here</h1>
+      {/* <Header />
       <SearchTask search={search} setSearch={setSearch} />
       <AddTask
         newTask={newTask}
@@ -71,7 +72,7 @@ function App() {
         calculateProgress={calculateProgress}
         progress={progress}
       />
-      <Footer length={tasks.length} />
+      <Footer length={tasks.length} /> */}
     </div>
   );
 }

@@ -72,7 +72,7 @@ function App() {
         calculateProgress={calculateProgress}
         progress={progress}
       />
-      <Footer length={tasks.length} />
+      <Footer length={tasks?.length} />
     </div>
   );
 }

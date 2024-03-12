@@ -38,8 +38,9 @@ function App() {
   };
 
   const calculateProgress = () => {
+    if (!tasks.length) return;
     const completedCount = tasks?.filter((task) => task?.completed).length;
-    const totalCount = tasks.length;
+    const totalCount = tasks?.length;
     return Math.round(
       totalCount === 0 ? 0 : (completedCount / totalCount) * 100
     );

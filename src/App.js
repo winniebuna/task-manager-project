@@ -7,7 +7,7 @@ import SearchTask from "./SearchTask.jsx";
 
 function App() {
   const [tasks, setTasks] = useState(
-    JSON.parse(localStorage.getItem("tasklist"))
+    JSON.parse(localStorage.getItem("tasklist")) || []
   );
 
   const [newTask, setNewTask] = useState("");

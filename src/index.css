@@ -68,7 +68,7 @@ footer {
   padding: 0.5rem 1rem;
   margin: 0.25rem 2rem;
   border-radius: 10px;
-  width: 90%;
+  min-width: 90%;
 }
 
 .progress-bar p {

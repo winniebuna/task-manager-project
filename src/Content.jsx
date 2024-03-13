@@ -11,7 +11,10 @@ const Content = ({ tasks, handleDelete, handleToggleComplete }) => {
           handleToggleComplete={handleToggleComplete}
         />
       ) : (
-        <p style={{ margin: "2rem" }}> You have no tasks to show 😊</p>
+        <p style={{ margin: "2rem", fontSize: "10px" }}>
+          {" "}
+          You have no tasks to show 😊
+        </p>
       )}
     </main>
   );

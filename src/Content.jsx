@@ -1,12 +1,9 @@
-import ProgressBar from "./ProgressBar";
+// import ProgressBar from "./ProgressBar";
 import TaskList from "./TaskList";
 
-const Content = ({ tasks, handleDelete, handleToggleComplete, progress }) => {
+const Content = ({ tasks, handleDelete, handleToggleComplete }) => {
   return (
     <main>
-      <ProgressBar progress={progress} />
-      <p className="task-list-label"> Task List</p>
-
       {tasks.length ? (
         <TaskList
           tasks={tasks}

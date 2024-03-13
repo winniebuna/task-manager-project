@@ -4,6 +4,7 @@ import Footer from "./Footer.jsx";
 import Header from "./Header.jsx";
 import { useState } from "react";
 import SearchTask from "./SearchTask.jsx";
+import ProgressBar from "./ProgressBar.jsx";
 
 function App() {
   const [tasks, setTasks] = useState(
@@ -63,6 +64,8 @@ function App() {
         setNewTask={setNewTask}
         handleSubmit={handleSubmit}
       />
+      <ProgressBar progress={progress} />
+      <p className="task-list-label"> Task List</p>
       <Content
         tasks={tasks?.filter((task) =>
           task?.task.toLowerCase().includes(search.toLowerCase())
@@ -70,7 +73,6 @@ function App() {
         handleToggleComplete={handleToggleComplete}
         handleDelete={handleDelete}
         calculateProgress={calculateProgress}
-        progress={progress}
       />
       <Footer length={tasks?.length} />
     </div>

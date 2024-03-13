@@ -10,9 +10,10 @@ const ProgressBar = ({ progress }) => {
         style={{
           width: "100%",
           backgroundColor: "#444141",
-          height: "15px",
+          height: "8px",
           borderRadius: "10px",
           marginTop: "10px",
+          marginBottom: "10px",
         }}
       >
         {/* outer pink progress bar */}
@@ -20,7 +21,7 @@ const ProgressBar = ({ progress }) => {
           style={{
             width: `${progress}%`,
             backgroundColor: "#D478FF",
-            height: "100%",
+            height: "8px",
             borderRadius: "10px",
           }}
         />

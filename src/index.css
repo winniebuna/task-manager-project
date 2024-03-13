@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-html {
-  font-size: 22px;
-}
-
 body {
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
@@ -21,7 +17,7 @@ body {
   align-items: center;
   height: 100vh;
   width: 100%;
-  max-width: 500px;
+  max-width: 280px;
   border: 1px solid #232222;
   margin: auto;
   background-color: #232222;
@@ -29,7 +25,7 @@ body {
 
 header {
   width: 100%;
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
   color: #d9d9d9;
   display: flex;
   flex-direction: column;
@@ -38,11 +34,12 @@ header {
 }
 
 header h1 {
-  font-weight: 500;
+  font-weight: 400;
+  font-size: 1.5rem;
 }
 
 header p {
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   color: #696866;
 }
 
@@ -67,23 +64,26 @@ footer {
 
 .progress-bar {
   background-color: #332a36;
-  width: 90%;
-  padding: 1rem;
-  margin: 1rem;
-  padding: 1rem;
-  margin: 0.25rem 0;
-  border-radius: 15px;
+  width: 85%;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  border-radius: 10px;
+}
+
+.progress-bar p {
+  font-size: 0.6rem;
+  color: white;
 }
 
 .task-list-label {
   color: #696866;
   align-self: flex-start;
-  margin: 2rem 1rem 0;
-  font-size: 0.8rem;
+  margin: 1rem 1.5rem 0;
+  font-size: 0.6rem;
 }
 
 ul {
-  width: 100%;
+  width: 95%;
   list-style: none;
   padding: 1rem;
 }
@@ -97,9 +97,9 @@ ul li::before {
   justify-content: flex-start;
   align-items: center;
   background-color: #191919;
-  padding: 1rem;
-  margin: 0.25rem 0;
-  border-radius: 15px;
+  padding: 0.3rem 1rem;
+  margin: 0.3rem 0;
+  border-radius: 10px;
 }
 
 .task:first-child {
@@ -109,23 +109,19 @@ ul li::before {
 .task input[type="checkbox"] {
   text-align: center;
   width: 2.5rem;
-  width: 48px;
-  min-width: 48px;
-  height: 2.5rem;
-  height: 48px;
-  min-height: 48px;
+  height: 1rem;
   cursor: pointer;
   margin-right: 0.5rem;
 }
 
 .task > label {
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   flex-grow: 1;
 }
 
 .task svg {
-  min-width: 25px;
-  height: 25px;
+  min-width: 10px;
+  height: 10px;
   font-size: 1rem;
   color: #d9d9d9;
   cursor: pointer;
@@ -141,11 +137,11 @@ ul li::before {
 .container {
   display: block;
   position: relative;
-  padding-top: 2%;
-  padding-left: 45px;
+  padding-top: 5%;
+  padding-left: 25px;
   margin-bottom: 10px;
   cursor: pointer;
-  font-size: 25px;
+  font-size: 15px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -164,11 +160,10 @@ ul li::before {
 /* Create a custom checkbox */
 .checkmark {
   position: absolute;
-  top: 20%;
+  top: 35%;
   left: 0;
-  height: 25px;
-  width: 25px;
-  /* background-color: #eee; */
+  height: 15px;
+  width: 15px;
   border: 1px solid #d478ff;
   border-radius: 15px;
 }
@@ -197,10 +192,10 @@ ul li::before {
 
 /* Style the checkmark/indicator */
 .container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
+  left: 4px;
+  top: 2px;
+  width: 3px;
+  height: 5px;
   border: solid #191919;
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
@@ -214,8 +209,8 @@ ul li::before {
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  margin: 0.25rem 0 0;
-  padding: 0 0.5rem 0.25rem;
+  margin: 0.2rem 0 0;
+  padding: 0 0.5rem 0.1rem;
 }
 
 .search-form label {
@@ -224,12 +219,13 @@ ul li::before {
 }
 
 .search-form input[type="text"] {
+  font-family: "Poppins";
   flex-grow: 1;
   max-width: 100%;
-  min-height: 48px;
-  font-size: 1rem;
-  padding: 1rem;
-  margin: 0 0.5rem;
+  min-height: 28px;
+  font-size: 0.7rem;
+  padding: 0.6rem 0.8rem;
+  margin: 0 0.8rem;
   border-radius: 0.5rem;
   outline: none;
   border: none;
@@ -251,13 +247,14 @@ ul li::before {
 }
 
 .add-form input[type="text"] {
+  font-family: "Poppins";
   flex-grow: 1;
-  max-width: calc(100% - 50px);
-  min-height: 48px;
-  font-size: 1rem;
-  padding: 1rem;
+  min-height: 28px;
+  font-size: 0.7rem;
+  padding: 0.6rem 0.8rem;
   border-radius: 0.5rem;
   margin-right: 0.5rem;
+  margin-left: 0.3rem;
   outline: none;
   border: none;
   background-color: #191919;
@@ -265,10 +262,10 @@ ul li::before {
 }
 
 button {
-  min-width: 48px;
-  border-radius: 0.5rem;
-  padding: 0.8rem;
-  font-size: 1rem;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+  margin-right: 0.3rem;
+  font-size: 0.8rem;
   background-color: #d478ff;
   color: #191919;
   cursor: pointer;
@@ -286,7 +283,7 @@ button:hover {
 
 /* scroll bar customization */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
   background: #232222;
